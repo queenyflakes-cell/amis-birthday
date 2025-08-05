@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Pretty Lady🎂💝 </title>
+  <style>
+   body {
+  margin: 0;
+  font-family: 'Segoe Script', cursive;
+  background: linear-gradient(-45deg, #f0b1bb, #fa7688, #fd97a6, #e97c95);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+h1 {
+      color: honeydew;
+      text-align: center;
+      padding: 20px;
+      font-size: 50px;
+
+}
+    #memory-verse {
+  display: none;
+  opacity: 0;
+  text-align: center;
+  margin: 40px auto;
+  padding: 25px;
+  width: 80%;
+  max-width: 600px;
+  font-family: 'Georgia', serif;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #4B2E2E;
+
+  background-image: url("mv.jpg")  ;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: opacity 2s ease-in;
+}
+#verse-background {
+  background: #ffe4ec;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px #f9cadd;
+}
+
+#blessing-background {
+  background: #fff9e6;
+  padding: 15px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: 30px auto;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 8px #ffb6c1, 0 0 12px #ffc0cb, 0 0 16px #ff69b4;
+  }
+  50% {
+    text-shadow: 0 0 12px #ffc0cb, 0 0 18px #ff69b4, 0 0 24px #ff1493;
+  }
+  100% {
+    text-shadow: 0 0 8px #ffb6c1, 0 0 12px #ffc0cb, 0 0 16px #ff69b4;
+  }
+}
+
+
+    #birthday-message {
+      
+      color: honeydew;
+      text-align: center;
+      padding: 20px;
+      font-size: 50px;
+      min-height: 80px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid honeydew;
+      width: fit-content;
+      margin: 30px auto;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    #music-buttons {
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .song-button {
+      margin: 8px;
+      font-size: 18px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 10px;
+      background-image: url("music.jpg");
+      background-size: auto;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .song-button:hover {
+      background-color: #ff7f9f;
+    }
+
+    #audio-player-container {
+      text-align: center;
+      margin-top: 10px;
+      display: none;
+    }
+
+    audio {
+      margin-top: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .icon-button {
+      display: block;
+      margin: 20px auto;
+      font-size: 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    @keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+    .section-text {
+  text-align: center;
+  margin: 30px auto;
+  padding: 20px;
+  width: 85%;
+  font-family: 'Segoe Script', cursive;
+  font-size: 20px;
+  color: #fff0f5;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  animation: fadeIn 2s ease-in-out;
+  line-height: 1.6;
+}
+
+.section-text p {
+  margin: 0 0 10px;
+  background: linear-gradient(to right, #fff0f5, #ffe0ec);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+    #joy {
+      text-align: center;
+      background-image: url("letter.jpg");
+      background-size: contain;
+      background-position: center;
+      padding: 40px;
+      color: black;
+      font-size: 20px;
+      margin: 30px auto;
+      width: 80%;
+      border-radius: 15px;
+      display: none;
+      min-height: 200px;
+      animation: fadeIn 3s ease-in-out forwards;
+      box-sizing: border-box;
+    }
+
+    .confetti, .balloon {
+      position: fixed;
+      top: -20px;
+      animation: fall 8s linear infinite;
+      z-index: 9999;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Typing Effect Target -->
+  <h1 id="birthday-message"></h1>
+<!-- ✝ PRAYER BLOCK -->
+<div class="section-text">
+  <p>A simple prayer. A piece of heavenly advice through scripture.<br>What is life without God as its foundation?</p>
+  <button class="icon-button" onclick="handleClose()">✝</button>
+</div>
+<!-- Floating Bubble and Verse -->
+<div id="cross-scene" style="display: none; text-align: center; margin-top: 50px;">
+  <div id="wish-bubble" style="
+    display: inline-block;
+    background: radial-gradient(circle, #fff8dc, #ffe4b5);
+    color: #5a3e36;
+    font-family: 'Segoe Script', cursive;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    animation: floatUp 5s ease-out forwards;
+    opacity: 0;
+  ">
+    Close your eyes. Make a wish. Say a little prayer. 💫
+  </div>
+
+  <p id="memory-verse" style="
+    display: none;
+    margin-top: 40px;
+    font-family: 'Segoe Script', cursive;
+    font-size: 22px;
+    color: black;
+    animation: fadeIn 3s ease-in-out;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  ">
+    "Delight yourself in the Lord and He will give you the desires of your heart."<br>— Psalms 37:4 💞
+  </p>
+</div>
+<!-- 🎶 MUSIC BLOCK (Formatted) -->
+<div class="section-text">
+  <p>Lyrics, beats and rhythm. Everything embedded in these songs remind me of you.</p>
+  <button class="icon-button" onclick="toggleMusicButtons()">🎶</button>
+</div>
+  <!-- Music Buttons -->
+  <div id="music-buttons">
+    <button class="song-button" onclick="playAudio('a.mp3')">⚪Double Take-Dhruv</button>
+    <button class="song-button" onclick="playAudio('b.mp3')">⚪Tears Dry-Amy Winehouse</button>
+    <button class="song-button" onclick="playAudio('c.mp3')">⚪Burning Blue-Mariah The Scientist</button>
+    <button class="song-button" onclick="playAudio('d.mp3')">⚪Out on a Limb-Teena Marie</button>
+  </div>
+
+  <!-- Audio Player -->
+  <div id="audio-player-container">
+    <audio id="audio-player" controls loop>
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <div class="section-text">
+    <p>Words, thats all they are until emotion is birthed and dutifully represented.<br> Hope is intertwined with the need for you to understand that my love carries great depth.<br></p>
+    <button class="icon-button" onclick="joyce1()">📜</button>
+  </div> 
+  <!-- Poem Area -->
+  <div id="joy"></div>
+ <!-- 🍋🍊 FRUIT GREETING BLOCK -->
+ <div class="section-text">
+  <p>Lemon and orange, citrus overload! My favorite's favorites.</p>
+  <button class="icon-button" id="fruit-btn">🍋🍊</button>
+</div>
+<!-- Greeting Area -->
+<div id="fruit-greeting" style="text-align: center; display: none;">
+  <p style="
+    font-size: 24px;
+    font-family: 'Segoe Script', cursive;
+    background: linear-gradient(to right, #fff44f, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 20px;
+  ">
+  <div id="scroll-indicator" style="display: none; text-align: center; margin-top: 10px;">
+    <p style="
+    font-size: 26px;
+    font-family: 'Segoe Script', cursive;
+    background: linear-gradient(to right, #fff44f, #ff7b00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(255, 165, 0, 0.2);
+  ">
+    🍋 Greetings from Lemon Meringue and Orange Blossom 🍊<br>Pick one!
+  </p>
+  
+  </div>
+<br>
+  <!-- Lemon Image Button -->
+  <button onclick="playVideo('lem.mp4')" style="background: none; border: none; margin: 0 20px;">
+    <img src="lemon.jpg" alt="Lemon Meringue" style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px;">
+  </button>
+
+  <!-- Orange Image Button -->
+  <button onclick="playVideo('ora.mp4')" style="background: none; border: none; margin: 0 20px;">
+    <img src="orange.jpg" alt="Orange Blossom" style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px;">
+  </button>
+</div>
+
+<!-- Video Player Area -->
+<div id="video-player-container" style="display: none; text-align: center; margin-top: 20px;">
+  <video id="video-player" controls width="90%" style="max-width: 500px; border-radius: 12px;">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+
+  <script>
+   let name = prompt("Hii", "Insert name");
+
+if (!name || !["ami", "amirykal"].includes(name.trim().toLowerCase())) {
+  alert("Keep it moving.");
+  document.body.innerHTML = "<h2 style='text-align: center; color: red;'>Access Denied 🎀</h2>";
+  throw new Error("Unauthorized access");
+} else {
+  alert("Hi baby :)");
+}
+  
+// Show greeting and image buttons when 🍋🍊 button is clicked
+   document.getElementById('fruit-btn').addEventListener('click', () => {
+  const greeting = document.getElementById('fruit-greeting');
+  const scrollIndicator = document.getElementById('scroll-indicator');
+
+  greeting.style.display = 'block';
+  scrollIndicator.style.display = 'block';
+
+  // Wait a bit and then scroll down smoothly to the fruit images
+  setTimeout(() => {
+    greeting.scrollIntoView({ behavior: 'smooth' });
+  }, 500);
+});
+
+// Play selected video
+function playVideo(filename) {
+  const videoContainer = document.getElementById("video-player-container");
+  const videoPlayer = document.getElementById("video-player");
+
+  videoPlayer.src = filename;
+  videoPlayer.load();
+  videoPlayer.play();
+  videoContainer.style.display = "block";
+
+  // Smooth scroll to video player
+  setTimeout(() => {
+    videoContainer.scrollIntoView({ behavior: 'smooth' });
+  }, 300);
+}
+    
+    function joyce1() {
+      const joyDiv = document.getElementById("joy");
+      joyDiv.innerHTML = `
+      <p> A poem for my Ami Bear🥰</p>
+      <p>
+          <br><br><br>
+          When you look in the mirror what do you see? Take some time to ponder <br>
+          But in the meantime let it be known to all near and yonder <br>
+          If I could be your mirror for a day, <br>
+          Even for a minute or for as long as a century, <br>
+          My reflection of you will never relent nor will it spare, <br>
+          The presence of thoughts filled with unwavering despair, <br>
+          That breach the fine distinguishment of reality and falsity. <br><br>
+          Staring back at you will be a vessel that consistently overflows <br>
+          From the abundance of love and everything precious there is to offer. <br>
+          You would look at resilience, kindness and empathy in the eyes of your reflection and wonder <br>
+          how you could ever think you were a separate entity.<br>
+          The face you possess, <br>
+          The melody you create when you speak, <br>
+          Consistently clouds my imagery with the conception of beauty that even angels could only dream of. <br><br>
+          Behind that body I see the purest soul,<br>
+          Behind those tired eyes I see a fighter whose strength never empties,<br>
+          Behind that smile I see a little girl who is just waiting to be loved without fear,<br>
+          I see you. <br><br>
+          If I could make only one wish, <br>
+          It would be for you to see yourself through my lens of perception. <br>
+          Look in the mirror with the eyes of someone who loves you dearly <br>
+          Now tell me, what do you see? <br>
+          - Jewel
+        </p>`;
+      joyDiv.style.display = "block";
+    }
+
+    function toggleMusicButtons() {
+      const buttons = document.getElementById("music-buttons");
+      buttons.style.display = (buttons.style.display === "none" || buttons.style.display === "") ? "block" : "none";
+    }
+
+    function playAudio(filename) {
+      const audioPlayer = document.getElementById("audio-player");
+      const container = document.getElementById("audio-player-container");
+      audioPlayer.src = filename;
+      audioPlayer.play();
+      container.style.display = "block";
+    }
+    function handleClose() {
+  const scene = document.getElementById("cross-scene");
+  const bubble = document.getElementById("wish-bubble");
+
+  // Show scene and bubble
+  scene.style.display = "block";
+  bubble.style.opacity = "1";
+
+  // After bubble floats away
+  setTimeout(() => {
+    bubble.style.opacity = "0"; // fade out bubble
+  }, 4000);
+
+  // Show verse with typing effect
+  setTimeout(() => {
+    const verseBox = document.getElementById("memory-verse");
+    verseBox.innerHTML = `
+  <div id="verse-background">
+    <span id="typed-verse"></span>
+  </div>
+  <div id="blessing-background">
+    <span id="blessing-message"></span>
+  </div>
+`;
+verseBox.style.display = "block";
+    verseBox.style.opacity = "1";
+    typeVerse();
+  }, 5500);
+
+  // Scroll to the whole scene
+  setTimeout(() => {
+    scene.scrollIntoView({ behavior: "smooth" });
+  }, 300);
+}
+
+// Typing animation for memory verse
+function typeVerse() {
+  const fullVerse = `"Delight yourself in the Lord and He will give you the desires of your heart." — Psalms 37:4 `;
+  const typedTarget = document.getElementById("typed-verse");
+  const blessing = document.getElementById("blessing-message");
+  let i = 0;
+
+  function typeChar() {
+    if (i < fullVerse.length) {
+      typedTarget.innerHTML += fullVerse.charAt(i);
+      i++;
+      setTimeout(typeChar, 50);
+    } else {
+      // Show the blessing message after verse finishes
+      setTimeout(() => {
+        blessing.innerText = "Dear God, I want to show gratitude for bringing such a lovely woman, full of intelligence, wit and kindheartedness into my life. I pray that as she celebrates her birthday today you fill her heart with immense joy and satisfaction. I pray that you continue to bless her with your love and guidance and may she feel your presence with her always, in every step that she takes. May all her dreams come true. Thankyou for giving her the gift of life and letting her see many more decades to come. Amen "
+blessing.style.fontSize = "20px";
+blessing.style.fontFamily = "'Segoe Script', cursive";
+blessing.style.color = "#ff69b4";
+blessing.style.textShadow = "0 0 8px #ffb6c1, 0 0 12px #ffc0cb, 0 0 16px #ff69b4";
+blessing.style.animation = "glowPulse 2s ease-in-out infinite";
+
+const blessingBox = document.getElementById("blessing-background");
+blessingBox.style.opacity = "1";
+      }, 1000);
+    }
+  }
+
+  typeChar();
+}
+
+    // ✍️ Typing Effect + 🎊 Confetti/Hearts
+    const message = "HAPPY BIRTHDAY PRETTY LADY 💝";
+    let i = 0;
+    const speed = 100;
+    const target = document.getElementById("birthday-message");
+
+    function typeText() {
+      if (i < message.length) {
+        target.innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeText, speed);
+      } else {
+        launchEffects(); // after typing done
+      }
+    }
+
+    function launchEffects() {
+      for (let i = 0; i < 60; i++) {
+        const el = document.createElement("div");
+        el.className = Math.random() < 0.5 ? "confetti" : "balloon";
+        el.textContent = Math.random() < 0.5 ? "🎈" : "✨";
+        el.style.left = Math.random() * 100 + "vw";
+        el.style.fontSize = (16 + Math.random() * 24) + "px";
+        el.style.animationDuration = (3 + Math.random() * 3) + "s";
+        document.body.appendChild(el);
+        setTimeout(() => document.body.removeChild(el), 5000);
+      }
+    }
+
+
+    window.onload = typeText;
+    
+  </script>
+
+</div>
+</body>
+</html>
